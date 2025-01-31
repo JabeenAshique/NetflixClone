@@ -10,6 +10,7 @@ import { logout } from "../../firebase";
 
 const Navbar = () => {
   const navref = useRef();
+  // const [email,setEmail] = useState('')
   useEffect(()=>{window.addEventListener('scroll',()=>{
     if(window.scrollY >= 80){
       navref.current.classList.add('nav-dark')

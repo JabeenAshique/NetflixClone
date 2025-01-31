@@ -1,8 +1,5 @@
-
-
 import {useRef, useState,} from 'react'
 import "./TitleCards.css"
-import cards_data from "../../assets/cards/Cards_data"
 import { useEffect } from 'react';
 import{Link} from 'react-router-dom'
 // import PropTypes from "prop-types";

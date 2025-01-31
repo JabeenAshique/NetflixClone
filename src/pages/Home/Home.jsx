@@ -6,8 +6,12 @@ import play_icon from '../../assets/play_icon.png'
 import info_icon from '../../assets/info_icon.png'
 import TitleCards  from "../../components/TitleCards/TitleCards"
 import Footer from "../../components/Footer/Footer"
+import { useTitleCardsContext } from "../../components/TitleCards/TitleCardCondext"
+
 
 const Home = () => {
+  const cardsData = useTitleCardsContext(); // Access data from context
+
   return (
     <div className='home'>
       <Navbar />
@@ -26,10 +30,13 @@ const Home = () => {
         </div>
       </div>
       <div className="more-cards">
-      <TitleCards title={"Blockbuster Movies"} category={"top_rated"}/>
+      {/* <TitleCards title={"Blockbuster Movies"} category={"top_rated"}/>
       <TitleCards title={"Only on Netflix"} category={"popular"}/>
       <TitleCards title={"Upcomming"} category={"upcoming"}/>
-      <TitleCards title={"Top pics for you"} category={"now_playing"}/>
+      <TitleCards title={"Top pics for you"} category={"now_playing"}/> */}
+       {cardsData.map(({ title, category }, index) => (
+          <TitleCards key={index} title={title} category={category} />
+        ))}
       </div>
       <Footer/>
     </div>
